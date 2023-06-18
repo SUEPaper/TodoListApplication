@@ -10,7 +10,7 @@ from crud import crud_user
 from schemas import token as schemas_token
 
 reusable_oauth2 = OAuth2PasswordBearer(
-    tokenUrl="/login/access_token"
+    tokenUrl="/api/login/access_token"
 )
 
 
