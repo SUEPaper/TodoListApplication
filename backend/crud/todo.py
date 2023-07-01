@@ -7,7 +7,6 @@ from typing import Any
 
 class CRUDTodo(CRUDBase):
 
-
     def create(self, db: Session, todo_params):
         todo_data = jsonable_encoder(todo_params)
         todo = self.model(**todo_data)
