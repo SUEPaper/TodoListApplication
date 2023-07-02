@@ -1,7 +1,7 @@
 from datetime import datetime
 from sqlalchemy import TIMESTAMP, Column, Integer, String
+from sqlalchemy.orm import relationship
 from db.config import Base
-
 
 class User(Base):
     __tablename__ = "users"
@@ -14,3 +14,4 @@ class User(Base):
                         nullable=False, default=datetime.utcnow)
     updated_at = Column(TIMESTAMP(timezone=True), nullable=False,
                         onupdate=datetime.utcnow, default=datetime.utcnow)
+    todos = relationship("Todo", uselist=True, back_populates="user")
